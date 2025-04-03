@@ -5,7 +5,7 @@ import Login from './components/Login'
 
 function App() {
 
-  const PrivateRoute = ({ children }: { children: JSX.Element }) => {
+  const PrivateRoute = ({ children }: { children}) => {
     const authToken = localStorage.getItem("authToken");
     return authToken ? children : <Navigate to="/login" />;
   };

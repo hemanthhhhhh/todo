@@ -1,13 +1,14 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchToDos, setFilter, setSearchQuery } from "../features/taskSlice";
+import type { RootState, AppDispatch } from "../features/Store";
 
 const useTaskList = () => {
-  const dispatch = useDispatch();
-  const loading = useSelector((state) => state.tasks.loading);
-  const error = useSelector((state) => state.tasks.error);
-  const filter = useSelector((state) => state.tasks.filter);
-  const searchQuery = useSelector((state) => state.tasks.searchQuery);
+  const dispatch: AppDispatch = useDispatch();
+  const loading = useSelector((state: RootState) => state.tasks.loading);
+  const error = useSelector((state: RootState) => state.tasks.error);
+  const filter = useSelector((state: RootState) => state.tasks.filter);
+  const searchQuery = useSelector((state: RootState) => state.tasks.searchQuery);
 
   useEffect(() => {
     dispatch(fetchToDos());
