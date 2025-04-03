@@ -76,7 +76,7 @@ import { AppDispatch } from "../features/Store";
 
 // Define TypeScript interface for task props
 interface Task {
-  id: string;
+  id: number;
   title: string;
   description: string;
   status: "To Do" | "Pending" | "Completed";
